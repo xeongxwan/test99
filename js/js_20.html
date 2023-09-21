@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width: 400px;
+            height: 100px;
+            line-height: 60px ;
+            font-size: 4rem;
+            text-align: center;
+            border-radius: 20px;
+      
+
+        }
+h2{background-color: deepskyblue; height: 50px; width: 400px; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 20px; cursor: pointer;}
+
+
+    </style>
+    
+    <script>
+        // document.addEventListener('DOMContentLoaded', ()=>{});   // this라는 개념이 자기자신 객체가 아님 
+         document.addEventListener('DOMContentLoaded', function(){
+             //    변수명
+             // let input = document.querySelector('input');
+             // var input = document.querySelector('input');
+             // const input = document.querySelector('input'); //태그명(요소, 객체명)
+             // const input = document.querySelector('.aa');  // '#id명'
+             // const input = document.querySelector('input[type=text]'); // 태그[타입=값]
+             const input = document.querySelector('[name=nameTest]');  // [속성=값]
+             
+             input.addEventListener('change', function(){
+                 // 태그 - innerHTML,  textContent
+                 // form  태그 - value
+                 input.value = input.value.toUpperCase();
+             });
+ 
+             const input1 = document.querySelector('[name=valueTest]');  // [속성=값]   
+ 
+             // input1.addEventListener('change', function(){  //변화가 있어야 하고 태그를 벗어났을 때
+             //    const span = document.querySelector('span');
+             //    //일반태그 : innerHTML, textContent
+             //    // form 태그 : value
+             //    if(input1.value === ""){ // input1.value == "", input1.value.length === 0
+             //                             // 글자를 썼다 지웠다하는 변경이 일어났으며 내용을 모두 지운다음
+             //                             // 태그 밖으로 벗어났을 때 실행
+             //         span.textContent ="글자가 입력되지 않았습니다."; 
+             //    }else{
+             //      input1.value = input1.value.toLowerCase();  //소문자
+             //    }
+             
+             // });
+             input1.addEventListener('blur', function(){  //태그를 벗어 났을 때
+                const span = document.querySelector('span');
+                //일반태그 : innerHTML, textContent
+                // form 태그 : value
+                if(input1.value === ""){ // input1.value == "", input1.value.length === 0
+                     span.textContent ="글자가 입력되지 않았습니다."; 
+                }else{
+                  input1.value = input1.value.toLowerCase();  //소문자
+                }
+ 
+             });
+         });    
+     </script>
+ 
+</head>
+</head>
+<body>
+    <h1>영문 소문자를 입력하면 영문 대문자로 변환</h1>
+    <input type="text" name="nameTest" class="aa">
+    <!-- <input type="text" name="phone" onchange="testFun()"> -->
+
+    <!-- 
+        1. 글자를 써 놓고 글자를 클릭하면 글자색이 빨강으로 바뀌게
+        2. input 안에 글자를 쓰고 그것을 읽어서 모두 소문자로 변경하고
+           글자 없으면 '글자가 입력되지 않았습니다.' 옆에 쓰기
+    -->
+    <h2 id="clickTest">여기를 클릭하면 글자색이 변경됨 </h2>
+    <h1>아래 입력란에 입력하지 않으면 안내메시지 나타내기</h1>
+    <input type="text" name="valueTest">
+    <span name="result"></span>
+
+</body>
+
+</html>

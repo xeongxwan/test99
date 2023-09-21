@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날짜</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+                const date = new Date();
+                let arrH1 = document.querySelectorAll('h1'); //h1태그들을 읽어 배열로 처리
+
+                arrH1[0].textContent = date.getFullYear() + '년';
+                arrH1[1].textContent = (date.getMonth() + 1) + '월';  //컴퓨터는 1월이 0, 0+!;
+                arrH1[2].textContent = date.getDate() + '일';
+            
+
+
+                let week = date.getDay;
+                let dayofweek = '';
+            
+                switch(week){
+                    case 0 : dayofweek = '일요일';
+                    break;
+                    case 1 : dayofweek = '월요일';
+                    break;
+                    case 2 : dayofweek = '화요일';
+                    break;
+                    case 3 : dayofweek = '수요일';
+                    break;
+                    case 4 : dayofweek = '목요일';
+                    break;
+                    case 5 : dayofweek = '금요일';
+                    break;
+                    case 6 : dayofweek = '토요일';
+                    break;
+                }
+
+
+
+                arrH1[3].textContent = dayofweek;
+
+                arrH1[4].textContent = date.getHours() + '시';
+                arrH1[5].textContent = date.getMinutes() + '분';
+                arrH1[6].textContent = date.getSeconds() + '초';
+
+
+
+
+
+        });
+
+
+
+
+
+    </script>
+</head>
+<body>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>20+
+
+    
+</body>
+</html>

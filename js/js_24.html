@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+let testFun = function(){
+    const memid = document.querySelector('[name=id]');
+    const memPwd1 = document.querySelector('[name=pwd1]');
+    const memPwd2 = document.querySelector('[name=pwd2]');
+    const memname = document.querySelector('[name=name]');
+    const gender = document.querySelectorAll('[name=gender]');
+    const phone = document.querySelector('[name=phone]');
+    const email = document.querySelector('[name=email]');
+    const adressnum = document.querySelector('[name=adressnum]');
+    const adress = document.querySelector('[name=adress]');
+    const moreadress = document.querySelector('[name=moreadress]');
+
+
+    
+
+    if (memid.value === "") {
+        alert('아이디를 입력하세요');
+        memid.focus();
+        return false;
+    } else if (memPwd1.value === "") {
+        alert('비밀번호를 입력하세요');
+        memPwd1.focus();
+        return false;
+    } else if (memPwd2.value === "") {
+        alert('비밀번호 확인을 입력하세요');
+        memPwd2.focus();
+        return false;
+    } else if (memPwd1.value !== memPwd2.value) {
+        alert('비밀번호가 일치하지 않습니다');
+        memPwd2.focus();
+        return false;
+    } else if (memname.value === "") {
+        alert('이름을 입력하세요');
+        memname.focus();
+        return false;
+    } else if (gender[0].checked===false && gender[1].checked===false) {
+        alert("성별을 선택하세요");
+        return false;
+    } else if (phone.value === "") {
+        alert('핸드폰 번호를 입력하세요');
+        phone.focus();
+        return false;
+    } else if (email.value === "") {
+        alert('이메일을 입력하세요');
+        email.focus();
+        return false;
+    } else if (adressnum.value === "") {
+        alert('우편번호를 입력하세요');
+        adressnum.focus();
+        return false;
+    } else if (adress.value === "") {
+        alert('주소를 입력하세요');
+        adress.focus();
+        return false;
+    } else if (moreadress.value === "") {
+        alert('상세주소를 입력하세요');
+        moreadress.focus();
+        return false;
+    } else {
+        return true;
+    }
+
+    return false;
+}
+
+
+    </script>
+
+    <style>
+        body{width: 1920px; height: 800px;}
+        form{margin: auto;}
+       body{background-color: wheat;}
+        .thText3{width: 500px; height: 50px; font-size: 30px; background-color: skyblue;}
+        .thText1 {background-color:skyblue; height: 40px; }
+        button{float: right; margin-right: 10px; height: 30px; margin-top: 0px;background-color:skyblue; border: none; border-radius: 5px; cursor: pointer;}
+        table{background-color: white;}
+        input[type=text]{height: 25px; margin-left: 20px; width: 250px;}
+        input[type=password]{height: 25px;margin-left: 20px; }
+        input[type=submit]{margin-left: 200px;margin-top: 10px;height: 30px; }
+        input[type=tel]{width: 80px; height: 25px;margin-left: 20px;}
+        input[type=email]{width: 250px; height: 25px;margin-left: 20px;}
+        input[type=reset]{height: 30px;}
+        input[type=radio]{margin-left: 30px;}
+    </style>
+</head>
+<body>
+        
+    
+    <form action="" method="post" name="test" onsubmit="return testFun()">
+        <table border="1">
+            <tr>
+                <th class="thText3" colspan="2">회원가입 양식</th>
+            </tr> 
+            <tr>
+                <th class="thText1">아이디</th>
+                <td class="tdText"><input type="text" name="id">
+                    <button id="my-button">중복체크</button></td>
+            </tr>
+            <tr>
+                <th class="thText1">비밀번호</th>
+                <td class="tdText"><input type="password" name="pwd1"><span class="pwdText"></span></td>
+            </tr>
+            <tr>
+                <th class="thText1">비밀번호확인</th>
+                <td class="tdText"><input type="password" name="pwd2"><span class="pwdText"></span></td>
+            </tr>
+            <tr>
+                <th class="thText1">이름</th>
+                <td class="tdText"><input type="text" name="name"></td>
+            </tr>
+          
+            <tr>
+                <th class="thText1">성별</th>
+                <td class="tdText">
+                <input type="radio" name="gender" value="b1"> 남
+                <input type="radio" name="gender" value="b2"> 여
+                </td>
+            </tr>
+            <tr>
+                <th class="thText1">휴대폰 번호</th>
+                <td class="tdText"><input type="tel" name="phone" ><input type="tel" name="phone" > <input type="tel" name="phone" > </td>
+                
+            </tr>
+            <tr>
+                <th class="thText1">이메일</th>
+                <td class="tdText"><input type="email" name="email" > 
+                </td>
+            </tr>
+            <tr>
+                <th class="thText1">우편번호</th>
+                <td class="tdText">우편변호<input type="text" name="adressnum" > 
+                </td>
+            </tr>
+            <tr>
+                <th class="thText1">주소</th>
+                <td class="tdText"><input type="text" name="adress" > 
+                </td>
+            </tr>
+            <tr>
+                <th class="thText1">상세주소</th>
+                <td class="tdText"><input type="text" name="moreadress" > 
+                </td>
+            </tr>
+            
+
+        </table>
+        <tr>
+            <td class="sub" colspan="2">
+                <input type="submit" name="submit" value="가입하기">
+                <input type="reset" name="reset" value="새로작성">
+            </td>
+        </tr>
+    </form>
+
+</body>
+</html>

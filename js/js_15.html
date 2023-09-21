@@ -1,0 +1,94 @@
+<!-- 
+DOm(document Object model) : 문서 객체 모델
+    문서 객체를 조합해서 만든 전체적인 형태
+
+
+    문서 객체를 조작할 때는 DomcontentLoaded 이벤트를 사용
+        이벤트 : 마우스를 클릭, 드래그 , 키보드로 글자 입력 .....
+    DomcontentLoaded : html 문서를 브라우저가 다 읽고 나면
+                    
+
+
+ -->
+ <!DOCTYPE html>
+ <html lang="ko">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded' , function(){
+
+            let h1 = document.querySelector('#test');
+            h1.textContent = '이벤트 발생'
+        });
+        
+        /*
+                문서객체.addEventListener('이벤트',콜백함수);
+                let aa = h1.addEventListener('click',function(){alert('zzz');});
+
+                querySelector('태그명(=선택자)')
+                querySelector('.클래스명')
+                querySelector('#아이디명')
+                querySelector('[속성 = 값]'); //[name = check]
+
+                querySelectorAll('태그명') : // 배열로 반환
+
+                //값을 추출
+                문서객체.textComtemt : 입력된 문자열을 그대로 넣기
+                문서객체.innerHTML : 입력된 문자열을 HTML 형식으로 넣기(보안에 문제 생길 수 있음)
+
+                //값을 조작
+                문서객체.textComtemt : "입력할 값"
+                문서객체.innerHTML : "입력할 값"
+
+
+
+                //속성조작
+                문서객체.setattribute(속성이름, 값) : 특정 속성을 지정
+                문서객체.getAttribute(속성이름) : 특정 속성을 추출
+
+                //문서 객체 생성
+                document.createElement(문서객체이름(=태그명))
+                부모객체.appendChild(자식객체) ; 부모 객체 속에 자식객체 추가하기
+
+                부모객체.appendChild(자식객체) ; 자식 객체를 어떤 부모에 붙이냐에 따라 이동됨 됨
+                A부모 객체 -> B부모 객체로 문서객체 이동
+
+                //문서 객체 제거
+                부모객체.removeChild(자식객체)
+                문서객체.parentNode.removeChild(자식객체);
+
+
+
+        
+
+
+        */
+        
+   
+
+        document.addEventListener('DOMContentLoaded' , function(){
+                let imgarr = document.querySelectorAll('img');
+                setTimeout(function(){
+
+                    let div = document.querySelector('div');
+                    div.removeChild(imgarr[1]);
+                    
+                },2000);
+            
+           
+}); 
+
+//3초 후에 2번 그림 제거하기
+    </script>
+ </head>
+ <body>
+    <h1 id="test"></h1>
+    <div>
+        <img src="../img/1.jpg" alt="">
+        <img src="../img/2.jpg" alt="">
+        <img src="../img/3.jpg" alt="">
+    </div>
+ </body>
+ </html>

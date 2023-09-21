@@ -1,0 +1,90 @@
+<html lang="ko">
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/basic.css">
+    <script>
+        let testFun = function(){
+                let memName = document.querySelector('[name=name]');
+                let memPwd = document.querySelector('[name=pwd]');
+                let birth = document.querySelectorAll('[name=birth]');
+
+                //입력이 안되어 있거나 선택이 안되어 있으면 경고창 띄우기
+                if(memName.value === ""){
+
+                    alert('이름을 입력하세요...')
+                    memName.focus(); //포커스, 커서
+                    return false;
+
+
+                }
+                if(memPwd.value === ""){
+                    alert('비밀번호를 입력하세요...')
+                    memPwd.focus();
+                    return false;
+
+                }
+                if(birth[0].checked===false && birth[1].checked===false){
+                    alert("양력 또는 음력을 선택하세요....")
+                    return false; 
+                }
+
+
+
+            return true;
+
+        }
+        
+
+
+    </script>
+    <style> 
+    
+    </style>
+</head>
+<body>
+    <h1>폼 태그 데이터 읽기 연습</h1>
+    
+    <form action="" method="post" name="test" onsubmit="return testFun()">
+        <table border="1">
+            <tr>
+                <th class="thText">이름</th>
+                <td class="tdText"><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <th class="thText">비밀번호</th>
+                <td class="tdText"><input type="password" name="pwd"><span class="pwdText"></span></td>
+            </tr>
+            <tr>
+                <th class="thText">생년월일</th>
+                <td class="tdText"><input type="radio" name="birth" value="b1"> 양력
+                    <input type="radio" name="birth" value="b2"> 음력
+                </td>
+            </tr>
+            <tr>
+    
+                <td class="sub" colspan="2">
+                    <input type="submit" name="submit" value="전송">
+                    <input type="reset" name="reset" value="다시쓰기">
+                </td>
+            </tr>
+
+        </table>
+
+
+
+
+
+
+
+    </form>
+
+
+
+
+
+
+</body>
+</html>

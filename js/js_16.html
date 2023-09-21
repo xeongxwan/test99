@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+
+        document.addEventListener('DOMContentLoaded', function(){
+        let span = document.querySelector('span');
+
+        let displayText=span.addEventListener('click',function(){
+
+            span.textContent = '즐거운 시간 ';
+
+        });
+
+
+        
+
+        });
+
+
+
+
+
+
+
+
+    </script>
+    <style>
+        body{width: 1000px; height: 100px; background-color: antiquewhite; margin: auto; margin-top: 200px;}
+        p{width: 1000px; height: 200px; border-radius: 20px;  font-size: 50px; color: black;  text-decoration: none;  display: flex; justify-content: center;align-items: center;}
+    span:hover{color: black; zoom: 1.1;width: 1000px; color: aqua; }
+    span {width: 1000px; height: 200px; border-radius: 20px;  font-size: 100px; color: white;  text-decoration: none; background: linear-gradient(45deg, blue, Orange); display: flex; justify-content: center;align-items: center; }
+
+
+    </style>
+</head>
+<body>
+    <p>아래의 글자를 누르면 글자가 변합니다.</p>
+    <span>여기를 눌러주세요...</span>
+    
+
+
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<script> 
+// 숫자가 80이상이면 '합격' , 80미만이면 '불합격'
+//삼항연산자 사용
+
+function addNumbers(num1, num2) {
+  return num1 + num2;
+}
+
+const number1 = parseFloat(prompt("첫 번째 숫자를 입력하세요:"));
+const number2 = parseFloat(prompt("두 번째 숫자를 입력하세요:"));
+
+const result = addNumbers(number1, number2);
+
+alert(`두 숫자의 합은 ${result} 입니다.`);
+
+
+
+
+//문1) 두 수를 입력받아서 두 수 사이의 합을 구하기
+//단, 입력한 두 수 모두 포함하고, 첫번째 숫자가 두번째 숫자보다 작을경우
+//for문 활용
+
+function calculateSumBetweenNumbers(num1, num2) {
+  let sum = 0;
+  
+  if (num1 <= num2) {
+    for (let i = num1; i <= num2; i++) {
+      sum += i;
+    }
+  } else {
+    for (let i = num2; i <= num1; i++) {
+      sum += i;
+    }
+  }
+  
+  return sum;
+}
+
+const firstNumber = parseInt(prompt("첫 번째 숫자를 입력하세요:"), 10);
+const secondNumber = parseInt(prompt("두 번째 숫자를 입력하세요:"), 10);
+
+const sumResult = calculateSumBetweenNumbers(firstNumber, secondNumber);
+
+alert(`${firstNumber}부터 ${secondNumber}까지의 합은 ${sumResult} 입니다.`);
+
+
+
+
+
+
+
+
+//문3) 1~5까지 자연수의 합(while문 활용)
+
+function calculateArraySum(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum;
+}
+
+const inputArray = prompt("숫자로 이루어진 배열을 입력하세요 (쉼표로 구분):");
+const numbers = inputArray.split(',').map(num => parseFloat(num));
+
+const sum = calculateArraySum(numbers);
+
+alert(`배열의 합은 ${sum} 입니다.`);
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+
+        let inputName = document.querySelector('.aa');  //클래스
+        let inputPass = document.querySelector('#bb');  //아이디
+        let div = document.querySelector('div');    //태그
+        h1.style.backgroundColor='green';
+        h2.style.color='red';
+        div.textContent = 'ㅋㅋㅋㅋㅋㅋ<br\> 성공';
+
+
+
+    </script>
+</head>
+<body>
+
+    <!-- <form action="" name="test">
+        <label for = "name"> 이름 </label>
+        <input type = "text" name="name" id="name">
+        <br>
+        <label for="passs">비밀번호/label>
+    <input type="password" name="passs"  id="passs">
+    </form> -->
+
+    <h1 class="aa">하이! 즐거운 시간</h1>
+    <h2 id="bb">자바스크립트</h2>
+
+    <div>
+
+    </div>
+</body>
+</html>
+

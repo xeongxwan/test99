@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .mouse {
+        width: 400px;
+        height: 200px;
+        line-height: 100px;
+        background-color: beige;
+        color: blue;
+        font-size: 3rem;
+        margin-bottom: 20px;
+        text-align: center;
+        font-weight: bold;
+        display: flex; align-items: center; justify-content: center;
+    }
+    body{background-image: url(../img/mingi.jpg); width: 100%; height: 1080px; display: flex; align-items: center; justify-content: center; background-size: initial;}
+div{border-radius: 20px;}
+div:first-child{margin-right: 100px;}
+span{display: flex; align-items: center; justify-content: center; width: 1000px; height: 800px; background-color:  #000; opacity: 0.5;} 
+
+    </style>
+    <script>
+        let mouseOverFun=function(obj){
+            // let div2 = document.querySelector('#test2');
+    // div2.style.backgroundColor =  "red";
+    // div2.textContent = "글자2~~~~";
+     obj.style.backgroundColor =  "blue";
+     obj.style.color = "beige";
+     obj.textContent = "글자2~~~~";
+        };
+
+        let mouseOutFun=function(obj){
+            obj.style.backgroundColor="beige";
+            obj.style.color = "blue";
+        obj.textContent ="글자1";
+        };
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            let div1 =document.querySelector('#test1');
+
+            //id - test1(div1)에 마우스가 올라오는 이벤트 발생했을 때
+            // 이벤트가 발생
+            //문서 객체.addEventListener(이벤트, 콜백함수);
+            div1.addEventListener('mouseover',function(){
+                div1.style.backgroundColor =  "red";
+                div1.style.color = "beige";
+                div1.textContent = "글자2~~~~"
+            });
+
+            //id - test(div1)에 마우스가 나가는 이벤트가 발생했을 때
+            div1.addEventListener('mouseout',function(){
+                div1.style.backgroundColor =  "beige";
+                div1.style.color = "blue";
+                div1.textContent = "글자1"
+            });
+
+        });
+
+
+    </script>
+</head>
+<body>
+    <span>
+    <div id="test1" class="mouse" >글자1</div>    
+    <div id="test2" class="mouse" onmouseover="mouseOverFun(this)" onmouseout="mouseOutFun(this)">글자1</div>
+    </span>
+</body>
+</html>

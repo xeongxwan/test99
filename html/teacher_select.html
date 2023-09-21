@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강사조회</title>
+    
+    
+    <link rel="stylesheet" href="../css/basic.css">
+
+    <style>
+        
+    .top_main{
+        width: 100%;
+        height: 150px;
+        /* margin-bottom: 10px; */
+        background-color: skyblue;   /*자율부분 */
+    }
+    .top_title{
+        background-color: #0102fd;
+        height: 90px;
+        line-height: 90px;
+        text-align: center;
+    }
+    .top_title >h1{
+            color: white;
+            font-family: "궁서체";
+
+    }
+    #top_menu{
+        height: 60px;
+        line-height: 60px;
+        background-color: #92abeb;
+
+    }
+    #top_menu li{
+        display: inline-block;
+        height: 40px;
+    }
+    #top_menu li>a{
+        display: block;
+        font-size: 1.3rem;
+        padding: 0px 20px;
+        color: white;
+    }
+
+    .container{
+        height: 600px;
+        padding-top: 30px;
+        background-color: aliceblue;
+        box-sizing: border-box;
+      
+    }
+    .container>h1{
+        height: 50px;
+            line-height: 50px;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 30px;
+    }
+    .footer{
+        height: 100px;
+        line-height: 100px;
+        background-color: #0102fd;
+        text-align: center;
+    }
+    .footer>h2{
+        color: white;
+    }
+
+    table{
+        border: 1px solid black;
+        border-collapse: collapse;
+        margin: auto;
+
+    }
+    th,td{
+        width: 110px;
+        height: 40px;
+        text-align: center;
+        vertical-align: middle;
+
+
+    }
+
+    tr th:nth-child(5){
+        width: 200px;
+    }
+
+    </style>
+
+</head>
+<body>
+    
+<header class="top_main">
+    <div class="top_title">
+        <h1>골프연습장 회원관리 프로그램</h1>
+    </div>
+    <nav id="top_menu">
+        <ul>
+            <li><a href="#">강사조회</a></li>
+            <li><a href="../html/2.html">수강신청</a></li>
+            <li><a href="">회원정보조회</a></li>
+            <li><a href="">강사매출현황</a></li>
+            <li><a href="../index.html">홈으로</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <h1>강사조회</h1>
+    <table border="1">
+        <tr>
+            <th>강사코드</th>
+            <th>강사명</th>
+            <th>강의명</th>
+            <th>수강료</th>
+            <th>강사자격취득일</th>
+        </tr>
+        <tr>
+            <th>100</th>
+            <th>이초급</th>
+            <th>초급반</th>
+            <th>\100,000</th>
+            <th>2022년01월01일</th>
+        </tr>
+        <tr>
+            <th>200</th>
+            <th>김중급</th>
+            <th>중급반</th>
+            <th>\200,000</th>
+            <th>2022년01월02일</th>
+        </tr>
+        <tr>
+            <th>300</th>
+            <th>박고급</th>
+            <th>고급반</th>
+            <th>\300,000</th>
+            <th>2022년01월03일</th>
+        </tr>
+        <tr>
+            <th>400</th>
+            <th>정심화</th>
+            <th>심화반</th>
+            <th>\400,000</th>
+            <th>2022년01월04일</th>
+        </tr>
+    </table>
+</div>
+
+<footer class="footer">
+    <h2>HRDKOREA Copyrightⓒ</h2>
+</footer>
+
+
+
+
+</body>
+</html>

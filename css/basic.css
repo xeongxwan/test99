@@ -1,0 +1,29 @@
+* {margin: 0px; padding: 0px;} /* 주석 */
+
+body{
+    width: 980px;     /* 12로 나누어 나머지가 0이 되는 값*/
+    margin:  0px auto; /* 가운데 정렬 */
+    padding: 0px;
+}
+
+ul,ol,li{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+a, a:visited{
+    color: black;
+    text-decoration: none;
+}
+
+img{
+    border: 0px;
+    margin: 0px;
+    padding: 0px; 
+}
+
+
+
+
+

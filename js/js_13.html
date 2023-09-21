@@ -1,0 +1,55 @@
+<script>
+
+
+let student = {
+    name : '홍길동',
+    age : 23,
+    hubby : function(hub){ // 익명적 함수에서는 this : 자기자신 객체
+                            //객체 안에 선언되는 함수를 메소드 라고 함
+            alert(this.name + '님의 취미는' + hub + '입니다');
+            alert(student.name = '님의 취미' + hub);
+    },
+    eat : (food) => {   //화살표 함수에서는 this 의 자기자신 객체가 아님
+        alert(this.name + '님은' + food + '좋아합니다.');
+    },
+    testobj : {
+        a : 'a',
+        b : 'b'
+    }
+}
+
+
+
+
+alert(student.hubby('농구'));
+
+alert(student.eat('사과'));
+
+
+//객체명['키(=속성)']
+
+// alert(student['name']);
+// alert(student.name);
+
+
+student.name = '이강산';
+//추가
+student.ssn = 202303;
+
+console.log(student.name);
+console.log(student.ssn);
+
+//제거
+//delete 객체명.속성
+
+delete student.age;
+alert("학생나이" + student.age);
+
+
+
+
+
+
+
+
+</script>

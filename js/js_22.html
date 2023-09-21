@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .multi{
+            width: 200px;
+            height: 200px;
+            font-size: 2rem;
+        }
+    </style>
+    <script>
+        //function(){}  --->  () => {}
+        document.addEventListener('DOMContentLoaded', function(){
+            // const select = document.querySelector('select');
+            // const h1 = document.querySelector('.msg');
+            // var select = document.querySelector('select');
+            // var h1 = document.querySelector('.msg');
+            let select = document.querySelector('select');
+            let h1 = document.querySelector('.msg');
+            select.style.width = '300px';
+            select.style.height ='50px';
+
+            select.addEventListener('change', function(event){
+                //event.currentTarget:현재 작업 상태에 있던 요소(이벤트를 발생시킨 요소)
+                let opt= event.currentTarget.options; // 내부의 옵션 태그 전체 
+                // let index = event.currentTarget.options.selectedIndex;
+                let index = opt.selectedIndex; // 옵션들 중에서 선택된 것의 인덱스
+
+                // 문서객체.textContent = 값;   태그에 값을 쓰기
+                // 문서객체.textContent;  태그안의 글자 읽어오기
+                h1.textContent=`선택한 과일 : ${opt[index].textContent}`;
+                // ${opt[index] : 선택한 option 태그를 추출
+             });
+
+             //===================================================
+             let selMul = document.querySelector('.multi');
+             let hMul = document.querySelector('.mult');
+             selMul.addEventListener('change', function(event){
+               let optMul = event.currentTarget.options;
+               let list = [];  //선택한 과일을 담을 배열 선언
+
+               //메뉴 중에서 어떤 과일이 선택되었는지 확인하고 
+               //배열에 담기
+               // 배열의 내용을 모두 확인하려면 for문,  for of 사용
+               // for(let i=0; i<selMul.length; i++ ){}
+               for(let element of optMul ){
+                 // 선택 : selected  , 항목의 선택 여부 체크 
+                 if(element.selected){ //선택되었으면
+                    list.push(element.textContent);
+                 }
+               }
+               hMul.textContent = '선택한 과일들 : ' + list.join(', ');
+
+             });
+        });
+    </script>
+</head>
+<body>
+    <h1>희망하는 과일을 선택해 주세요...</h1>
+    <select>
+        <option>사과</option>
+        <option>딸기</option>
+        <option>복숭아</option>
+        <option>키위</option>
+    </select>
+    <h1 class="msg">과일을 선택하면 여기에 나옴</h1> <!--  선택한 과일 : 사과 -->
+
+    <h1>희망하는 과일을 여럿 선택해 주세요...</h1>
+    <select class="multi" multiple>
+        <option>사과</option>
+        <option>딸기</option>
+        <option>복숭아</option>
+        <option>키위</option>
+    </select>
+    <h1 class="mult">과일을 선택하면 여기에 나옴</h1> <!--  선택한 과일들 : 사과 -->
+
+</body>
+</html>

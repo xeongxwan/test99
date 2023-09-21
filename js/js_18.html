@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //방법1
+        let myTest=function(){
+            let p = document.querySelector('p');
+            p.textContent ="방법1로 버튼을 클릭하셨군요..."
+            p.style.color = 'red'
+            p.style.fontWeight = 900;
+        }
+        document.addEventListener('DOMContentLoaded',function(){
+            // 이벤트가 막기 : 문서객체.preventDefault();
+            /* 마우스 오른쪽 버튼 사용하지 못하게
+                //contextmenu : 마우스 오른쪽 버튼 이벤트
+                문서객체.addEventListener('contextmenu',function(event){
+                    event.preventDefault();
+                });
+            // */
+            //방법2
+            let but = document.querySelector('.but');                                                                                                                     
+            let p = document.querySelector('p');
+            but.addEventListener('click',()=>{
+            //   p.textContent = Date();  
+              p.textContent = '방법2로 버튼을 눌렀습니다.';  
+            })
+
+        });
+
+    </script>
+    <style>
+        body{background-color: beige; background-size: auto; display: flex; align-items: center; justify-content: center;}
+        div{width: 1500px; height: 800px; background-color: rgba(red, green, blue, 10); margin: auto; }
+        h1{width: 800px; height: 200px; border-radius: 20px;  font-size: 80px; color: white;  text-decoration: none; background: linear-gradient(45deg, blue, pink); display: flex; justify-content: center;align-items: center;}
+        button{width: 800px; height: 500px; background-image: url(../img/mingi.jpg);  font-size: 100px; background-size: contain; font-weight: bold; color: pink; border-radius: 20px;}
+        button:hover{zoom: 1.1; background-color: aqua;}
+        
+        </style>
+</head>
+<body>
+    <h1>버튼을 눌러 주세요</h1>
+    <button onclick="myTest()">클릭</button> <!-- form 태그 안이 아니기에 일반 버튼 -->
+    <button class="but">클릭</button> <!-- form 태그 안이 아니기에 일반 버튼 -->
+<!--
+    button 태그 : 일반 태그로 사용할 때는 그냥 버튼의 읨
+    <form> 태그 안에 있는 button 태그는 submit과 같은 기능
+            (<form><button>전송</button></form>)
+            만약 form 태그 안에서 버튼을 사용하고 싶으면
+            <input type="button" value="클릭">  : 회원인증, 이메일인증....
+-->
+    <p></p>
+
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>원의 넓이와 원의 둘레 구하기</title>
+</head>
+
+<script>
+    //원의 반지름을 입력받아 원의 넓이와 원의 둘레(반지름 * 2 *3 *3.14) 구하기
+    // 출력형태
+    // 입력받은 반지름 : ~~
+    // 원의 넓이 : ~~
+    // 원의 둘레  : ~~
+
+    //alert() , document.write() , console.log()
+
+
+let  radius = Number(prompt('반지름을 입력하세요 >>','정수로 입력 부탁'));
+const PI = 3.14;
+
+let output = '';
+    output += '입력받은 반지름 : ' + radius +'\n';
+    output += '원의 넓이 : ' + (radius * radius * PI) + '\n';
+    output += '원의 둘레 : ' + (radius * 2 * PI);
+alert(output);
+    
+//document.write()함수 이용
+// let output1 = '';
+//     output1 += '입력받은 반지름 : ' + radius +'<br/>';
+//     output1 += '원의 넓이 : ' + (radius * radius * PI) + '<br/>';
+//     output1 += '원의 둘레 : ' + (radius * 2 * PI);
+// // document.write(output1);
+
+//에러, 컴파일러는 위에서 아래로 읽기에 아직 body부분을 읽지 못했는데 body에 있는 태그를 일ㄱ어오라하고ㅡ 그태그에 담으로 해서 에ㄹ
+// let div = document.querySelector('.inner');
+// div.innerHTML = output1;
+
+</script>
+
+<script>
+
+    // document.addEventListener(이벤트, 처리할 이벤트리스너(=콜백함수));
+  
+
+</script>
+
+
+<body>
+    <div class="inner" style="width: 500px; height: 300px; background-color: beige; text-align: center; font-weight: bold; font-size: 30px; box-sizing: border-box; color: brown; display: flex; justify-content: center; align-items: center;"  ></div>
+    <hr>
+    <div class="text" style="width: 500px; height: 300px; background-color: black; color: white;text-align: center; font-weight: bold; font-size: 30px; box-sizing: border-box;  display: flex; justify-content: center; align-items: center;"></div>
+</body>
+<script>
+    let output1 = '';
+    output1 += '입력받은 반지름 : ' + radius +'<br/>';
+    output1 += '원의 넓이 : ' + (radius * radius * PI) + '<br/>';
+    output1 += '원의 둘레 : ' + (radius * 2 * PI);
+// document.write(output1);
+
+let div = document.querySelector('.inner');
+div.innerHTML = output1;
+
+
+
+
+document.addEventListener('DOMContentLoaded' , function(){
+    let  radius = Number(prompt('반지름을 입력하세요 >>','정수로 입력 부탁'));
+    const PI = 3.14;
+
+    let output2 = '';
+    output2 += '입력받은 반지름 : ' + radius +'\n';
+    output2 += '원의 넓이 : ' + (radius * radius * PI) + '\n';
+    output2 += '원의 둘레 : ' + (radius * 2 * PI);
+
+
+        //html태그를 읽어오기
+        const inDiv = document.querySelector('.text'); 
+        div.innerHTML = output2;
+        //innerHTML : 읽어오기
+        //text.Content : 태그의 내용을 읽어오기
+        //text
+
+
+});
+
+</script>
+</html>

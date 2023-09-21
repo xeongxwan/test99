@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+button{width: 200px; height: 50px; border-radius: 20px; background-color: dodgerblue; color: white; font-size: 20px; font-weight: bold; cursor: pointer; border: none;}
+body{background-image: url(../img/mingi.jpg);}
+p{font-size: 30px; background-color: dodgerblue; border-radius: 20px; width: 400px; display: flex; justify-content: center; align-items: center; color: white;padding: 5px;}
+.clickTest{
+    user-select: none; cursor: pointer; 
+}
+
+
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){ 
+            let counter=0;
+            let isConnect = false;
+
+            const h1 = document.querySelector('.clickTest');
+            const conBut = document.querySelector('#connect');
+            const disConBut = document.querySelector('#disconnect');
+            const p = document.querySelector('p');
+
+            // h1.addEventListener('click', function(event){
+            //     counter++;
+            //     h1.textContent = `클릭 횟수 : ${counter}`
+            // });
+
+            //이벤트 설정 : 문서객체.addEventListener(이벤트명, 이벤트리스너);  //이벤트 리스너 또는 콜백함수
+            //이벤트 제거 : 문서객체.removeEventListener(이벤트명, 이벤트리스너);
+            //                             제거의 이벤트리스너는 설정때 사용한 이벤트리스너를 넣어 줌
+
+            
+            const listner = function(event){  //이벤트를 제거하기 위해서는 이벤트리스너를 변수 또는 상수로 처리해야함
+                h1.textContent = `클릭 횟수 : ${++counter}`
+            }
+
+            //이벤트 연결 addEventListener('click', listner);
+            conBut.addEventListener('click',function(){
+                if(isConnect === false){
+                    h1.addEventListener('click', listner);
+                    p.textContent = '이벤트 연결 상태 : 연결';
+                    isConnect = true;
+                }
+            });
+
+            //이벤트 연결 해제 removeEventListener('click', listner);
+            disConBut.addEventListener('click',function(){
+                if(isConnect === true){
+                    h1.removeEventListener('click', listner);
+                    p.textContent = '이벤트 연결 상태 : 해제';
+                    isConnect = false;
+                }
+            });
+        });
+
+    </script>
+
+</head>
+<body>
+    <h1 class="clickTest">클릭 횟수 : 0</h1>
+    <button id="connect">이벤트 연결</button>
+    <button id="disconnect">이벤트 제거</button>
+    <p>이벤트 연결 상태 : 해제</p>
+
+
+
+</body>
+</html>

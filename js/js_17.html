@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        let myTest = function() {
+            let p = document.querySelector('p');
+            p.textContent ="버튼을 클릭하셨군요.."
+            
+        }
+
+
+
+        
+        document.addEventListener('DOMContentLoaded',function(){
+
+            // let but = document.querySelector('button');
+            // let p = document.querySelector('p');
+            // but.addEventListener('click',()=>{
+            //     p.textContent = '.'
+
+
+
+        
+
+
+        });
+        
+    </script>
+<style>
+body{background-color: beige; background-size: auto; display: flex; align-items: center; justify-content: center;}
+div{width: 1500px; height: 800px; background-color: rgba(red, green, blue, 10); margin: auto; }
+h1{width: 800px; height: 200px; border-radius: 20px;  font-size: 80px; color: white;  text-decoration: none; background: linear-gradient(45deg, blue, pink); display: flex; justify-content: center;align-items: center;}
+button{width: 800px; height: 500px; background-image: url(../img/mingi.jpg);  font-size: 100px; background-size: contain; font-weight: bold; color: pink; border-radius: 20px;}
+button:hover{zoom: 1.1; background-color: aqua;}
+
+</style>
+  
+</head>
+<body>
+    <div>
+        <h1>버튼을 눌러 주세요</h1>
+        <button onclick="myTest">클릭</button>
+        <p></p>
+    </div>
+    
+    <!-- 
+        button 태그 : 일반 태그로 사용할 때는 그냥 버튼의 읨
+        <form> 태그 안에 있는 button 태그는 submit과 같은 기능
+                *
+
+
+                만약 form 태그 안에서 버튼을 사용하고 싶으면
+                    <input tupe ="buttopn" value"클릭"> : 회원인증, 이메일 인증....
+
+
+     -->
+    
+</body>
+</html>

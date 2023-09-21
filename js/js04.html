@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded' , function(){
+            let arr = ['사과','딸기',3,3.5,'우유',true];
+            // alert(arr)//확인
+
+
+            arr.push('오렌지 주스');
+            // // alert(arr);
+            // arr.splice(1,3);
+            // arr.splice(arr.indexOf('우유'), 0, '요거트');
+            // alert(arr);
+
+
+            let div = document.querySelector('div');
+            let arroutput = '';
+
+            for(let i=0; i<arr.length; i++){
+                arroutput += arr[i];
+                arroutput += '<br>';
+            }
+            div.innerHTML = arroutput;
+            div.style.backgroundColor='#ffe4c4';
+            div.style.fontSize = '36px';
+
+
+
+
+
+
+
+
+        });
+
+    </script>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수강신청</title>
+    
+    <link rel="stylesheet" href="../css/basic.css">
+
+    <style>
+        
+    .top_main{
+        width: 100%;
+        height: 150px;
+        /* margin-bottom: 10px; */
+        background-color: skyblue;   /*자율부분 */
+    }
+    .top_title{
+        background-color: #0102fd;
+        height: 90px;
+        line-height: 90px;
+        text-align: center;
+    }
+    .top_title >h1{
+            color: white;
+            font-family: "궁서체";
+            
+         
+    }
+    #top_menu{
+        height: 60px;
+        line-height: 60px;
+        background-color: #92abeb;
+
+    }
+    #top_menu li{
+        display: inline-block;
+        height: 40px;
+    }
+    #top_menu li>a{
+        display: block;
+        font-size: 1.3rem;
+        padding: 0px 20px;
+        color: white;
+    }
+
+    .container{
+        height: 600px;
+        padding-top: 30px;
+        background-color: aliceblue;
+        text-align: center;
+        box-sizing: border-box;
+
+    }
+    .container>h1{
+        height: 50px;
+            line-height: 50px;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 30px;
+    }
+    table{
+        border: 1px solid black;
+        border-collapse: collapse;
+        margin: auto;
+
+    }
+ 
+
+    .footer{
+        height: 100px;
+        line-height: 100px;
+        background-color: #0102fd;
+        text-align: center;
+    }
+    .footer>h2{
+        color: white;
+    }
+
+
+tr th:nth-child(2n){
+    text-align: left;
+    width: 440px;
+    height: 40px;
+   letter-spacing: 1px;
+   font-weight: 300;
+}
+tr th:nth-child(1){
+    text-align: center;
+    width:110px;
+}
+th>input[type=text]{
+    width: 150px;
+    height: 80%;}
+
+th>button{
+    width: 60px;
+    height: 40px;
+    background-color: white; border: 1px solid black;
+}
+th>select{
+    width: 100px;
+    height: 90%;
+    text-align: center;
+}
+
+
+    </style>
+
+</head>
+<body>
+    
+<header class="top_main">
+    <div class="top_title">
+        <h1>골프연습장 회원관리 프로그램</h1>
+    </div>
+    <nav id="top_menu">
+        <ul>
+            <li><a href="../html/teacher_select.html">강사조회</a></li>
+            <li><a href="#">수강신청</a></li>
+            <li><a href="">회원정보조회</a></li>
+            <li><a href="">강사매출현황</a></li>
+            <li><a href="../index.html">홈으로</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <h1>수강신청</h1>
+
+    <table border="1">
+        <tr>
+            <th>수강월</th>
+            <th><input type="text"> 2022년 3월 예)202203</th>
+        </tr>
+
+        <tr>
+            <th>회원명</th>
+            <th>
+                <select name="job">
+                    <option value="회원명">회원명</option>
+                    <option value="회원명">회원명</option>
+                    <option value="회원명">회원명</option>
+                    <option value="회원명">회원명</option>
+                </select></th>
+        </tr>
+
+        <tr>
+            <th>회원번호</th>
+            <th><input type="text">예)10001</th>
+        </tr>
+
+        <tr>
+            <th>강의장소</th>
+            <th><input type="checkbox">서울본원
+                <input type="checkbox">성남본원
+                <input type="checkbox">대전본원
+                <input type="checkbox">부산본원
+                <input type="checkbox">대구본원
+            </th>
+        </tr>
+
+        <tr>
+            <th>강의명</th>
+            <th><select name="job">
+                <option value="강의신청">강의신청</option>
+                <option value="강의신청">강의신청</option>
+                <option value="강의신청">강의신청</option>
+                <option value="강의신청">강의신청</option>
+            </select></th></th>
+        </tr>
+
+        <tr>
+            <th>수강료</th>
+            <th><input type="text">원</th>
+        </tr>
+   
+            <th colspan="2">
+                <button>수강신청</button>
+                <button>다시쓰기</button>
+            </th>
+            
+
+
+    </table>
+
+
+</div>
+
+<footer class="footer">
+    <h2>HRDKOREA Copyrightⓒ</h2>
+</footer>
+
+
+
+
+</body>
+</html>
